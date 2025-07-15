@@ -48,13 +48,13 @@ public class MainApp
             {
                 case 1:
                     Lecture l = new Lecture();
-                    System.out.print("Enter Topic Name : ");
+                    System.out.print(" Topic : ");
                     l.setTopic(sc.nextLine());
 
-                    System.out.print("Enter Speaker Name: ");
+                    System.out.print(" Speaker : ");
                     l.setSpeaker(sc.nextLine());
 
-                    System.out.print("Enter The Date (yyyy-MM-dd): ");
+                    System.out.print(" Date (yyyy-MM-dd): ");
                     l.setDate(LocalDate.parse(sc.nextLine()));
 
                     lectureDAO.addLecture(l);
@@ -64,10 +64,10 @@ public class MainApp
                 case 2:
                 	
                     Student s = new Student();
-                    System.out.print("Enter Student Name: ");
+                    System.out.print("  Name: ");
                     s.setName(sc.nextLine());
 
-                    System.out.print("Enter Student Email: ");
+                    System.out.print(" Email: ");
                     s.setEmail(sc.nextLine());
 
                     studentDAO.addStudent(s);
