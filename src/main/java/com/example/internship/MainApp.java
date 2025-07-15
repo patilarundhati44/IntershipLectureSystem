@@ -11,16 +11,22 @@ import com.example.internship.entity.Feedback;
 import com.example.internship.entity.Lecture;
 import com.example.internship.entity.Student;
 
-public class MainApp {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+public class MainApp 
 
-        // DAO instances
+{
+    public static void main(String[] args)
+    
+    {
+        Scanner sc = new Scanner(System.in);
+        
         LectureDAO lectureDAO = new LectureDAO();
         StudentDAO studentDAO = new StudentDAO();
         FeedbackDAO feedbackDAO = new FeedbackDAO();
 
-        while (true) {
+        while (true)
+        
+        {
+        	
             System.out.println("\n--- Internship Lecture System ---");
             System.out.println("1. Add Lecture");
             System.out.println("2. Register Student");
@@ -30,59 +36,75 @@ public class MainApp {
 
             System.out.print("Enter choice: ");
 
-            String choiceInput = sc.nextLine();
-            if (choiceInput.isBlank()) continue;
+            String input = sc.nextLine();
+            
+              if (input.isBlank())
+            	  
+            	  continue;
 
-            int ch = Integer.parseInt(choiceInput);
+            int ch = Integer.parseInt(input);
 
-            switch (ch) {
+            switch (ch)
+            
+            {
                 case 1:
-                    Lecture lec = new Lecture();
-                    System.out.print("Topic: ");
-                    lec.setTopic(sc.nextLine());
+                    Lecture l = new Lecture();
+                    System.out.print("Enter Topic Name : ");
+                    l.setTopic(sc.nextLine());
 
-                    System.out.print("Speaker: ");
-                    lec.setSpeaker(sc.nextLine());
+                    System.out.print("Enter Speaker Name: ");
+                    l.setSpeaker(sc.nextLine());
 
-                    System.out.print("Date (yyyy-MM-dd): ");
-                    lec.setDate(LocalDate.parse(sc.nextLine()));
+                    System.out.print("Enter The Date (yyyy-MM-dd): ");
+                    l.setDate(LocalDate.parse(sc.nextLine()));
 
-                    lectureDAO.addLecture(lec);
+                    lectureDAO.addLecture(l);
                     System.out.println("Lecture added successfully.");
                     break;
 
                 case 2:
+                	
                     Student s = new Student();
-                    System.out.print("Name: ");
+                    System.out.print("Enter Student Name: ");
                     s.setName(sc.nextLine());
 
-                    System.out.print("Email: ");
+                    System.out.print("Enter Student Email: ");
                     s.setEmail(sc.nextLine());
 
                     studentDAO.addStudent(s);
+                    
                     System.out.println("Student registered successfully.");
                     break;
 
                 case 3:
+                	
                     List<Student> students = studentDAO.getAllStudents();
                     List<Lecture> lectures = lectureDAO.getAllLectures();
 
-                    if (students.isEmpty() || lectures.isEmpty()) {
+                    if (students.isEmpty() || lectures.isEmpty())
+                    
+                    {
                         System.out.println("Please add both students and lectures first!");
                         break;
                     }
 
                     System.out.println("Students:");
-                    for (Student stu : students) {
+                    
+                    for (Student stu : students)
+                    
+                    {
                         System.out.println("ID: " + stu.getId() + ", Name: " + stu.getName());
                     }
 
                     System.out.println("Lectures:");
-                    for (Lecture l : lectures) {
-                        System.out.println("ID: " + l.getId() + ", Topic: " + l.getTopic());
+                    for (Lecture ll : lectures) 
+                    
+                    {
+                        System.out.println("ID: " + ll.getId() + ", Topic: " + l.getTopic());
                     }
 
                     Feedback f = new Feedback();
+                    
                     System.out.print("Student ID: ");
                     int sid = Integer.parseInt(sc.nextLine());
 
@@ -99,6 +121,7 @@ public class MainApp {
                     break;
                     
                 case 4:
+                	
                     System.out.print("Enter Student ID to delete: ");
                     int deleteId = sc.nextInt();
                     studentDAO.deleteStudent(deleteId);
@@ -107,11 +130,13 @@ public class MainApp {
    
 
                 case 5:
+                	
                     System.out.println("Exiting...");
                     sc.close();
                     return;
 
                 default:
+                	
                     System.out.println("Invalid choice! Try again.");
             }
         }
