@@ -9,7 +9,9 @@ import jakarta.persistence.Column;
 
 @Entity
 @Table(name = "students")
-public class Student {
+public class Student 
+
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,25 +23,30 @@ public class Student {
     @Column(nullable = false, unique = true)
     private String email;
 
-    // ✅ Correct Setters
-    public void setName(String name) {
+    
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email)
+    {
         this.email = email;
     }
 
-    // ✅ Getters
-    public int getId() {
+    public int getId() 
+    
+    {
         return id;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public String getEmail() {
+    public String getEmail() 
+    {
         return email;
     }
 }
