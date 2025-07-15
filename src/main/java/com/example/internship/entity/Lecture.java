@@ -12,7 +12,9 @@ import jakarta.persistence.Column;
 
 @Entity
 @Table(name = "lectures")
-public class Lecture {
+public class Lecture
+
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,36 +29,52 @@ public class Lecture {
     @Column(name = "date")
     private LocalDate date;
 
-    // Getters and Setters
-    public int getId() {
+   
+    public int getId() 
+    
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id) 
+    
+    {
         this.id = id;
     }
 
-    public String getTopic() {
+    public String getTopic() 
+    
+    {
         return topic;
     }
 
-    public void setTopic(String topic) {
+    public void setTopic(String topic)
+    
+    {
         this.topic = topic;
     }
 
-    public String getSpeaker() {
+    public String getSpeaker() 
+    
+    {
         return speaker;
     }
 
-    public void setSpeaker(String speaker) {
+    public void setSpeaker(String speaker) 
+    
+    {
         this.speaker = speaker;
     }
 
-    public LocalDate getDate() {
+    public LocalDate getDate() 
+    
+    {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(LocalDate date)
+    
+    {
         this.date = date;
     }
 }
