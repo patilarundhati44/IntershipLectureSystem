@@ -9,7 +9,9 @@ import jakarta.persistence.EntityManager;
 
 public class LectureDAO
 {
-	public void addLecture(Lecture lecture) {
+	public void addLecture(Lecture lecture) 
+	
+    {
         EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
         em.getTransaction().begin();
         em.persist(lecture);
@@ -17,14 +19,16 @@ public class LectureDAO
         em.close();
     }
 
-	public Lecture getLectureById(int lid) {
-		// TODO Auto-generated method stub
+	public Lecture getLectureById(int lid) 
+	{
+		
 		return null;
 	}
 
-	public List<Lecture> getAllLectures() {
+	public List<Lecture> getAllLectures()
+	{
 	    EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
-	    return em.createQuery("SELECT l FROM Lecture l", Lecture.class).getResultList();
+	    return em.createQuery("select l from Lecture l", Lecture.class).getResultList();
 	}
 
 }
