@@ -55,47 +55,7 @@ public class StudentDAO
 	    return em.createQuery("select s from Student s", Student.class).getResultList();
 	}
 	
-	public void deleteStudent(int studentId)
 	
-	{
-	    EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
-	    EntityTransaction tx = em.getTransaction();
-
-	    try
-	    
-	    {
-	        tx.begin();
-	        Student student = em.find(Student.class, studentId);
-	        if (student != null) 
-	        
-	        {
-	            em.remove(student);
-	            System.out.println("Student deleted successfully.");
-	        }
-	        
-	        else
-	        
-	        {
-	            System.out.println("Student not found.");
-	        }
-	        
-	        tx.commit();
-	    }
-	    
-	    catch (Exception e) 
-	    
-	    {
-	        if (tx.isActive()) tx.rollback();
-	        e.printStackTrace();
-	    } 
-	    
-	    finally 
-	    
-	    {
-	        em.close();
-	    }
-	}
-
 	
 
 }
