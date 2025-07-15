@@ -9,31 +9,41 @@ import jakarta.persistence.EntityManager;
 
 public class FeedbackDAO
 {
-	 public void addFeedback(Feedback feedback, int studentId, int lectureId) {
+	 public void addFeedback(Feedback feedback, int studentId, int lectureId)
+	 
+	 {
 	        EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
-	        try {
+	        
+	        try 
+	        
+	        {
 	            em.getTransaction().begin();
 
-	            Student student = em.find(Student.class, studentId);
-	            Lecture lecture = em.find(Lecture.class, lectureId);
+	            Student s = em.find(Student.class, studentId);
+	            Lecture l = em.find(Lecture.class, lectureId);
 
-	            if (student == null || lecture == null) {
+	            if (s == null || l == null)
+	            
+	            {
 	                System.out.println("Invalid student or lecture ID!");
 	                em.getTransaction().rollback();
 	                return;
 	            }
 
-	            feedback.setStudent(student);
-	            feedback.setLecture(lecture);
+	            feedback.setStudent(s);
+	            feedback.setLecture(l);
 	            em.persist(feedback);
 
 	            em.getTransaction().commit();
+	            
 	            System.out.println("Feedback submitted successfully.");
-	        } finally {
+	        } 
+	        
+	        finally 
+	        
+	        {
 	            em.close();
 	        }
 
-}
-
-	
+}	
 }
