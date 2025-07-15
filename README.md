@@ -2,7 +2,7 @@
 
 The **Internship Lecture & Feedback Managment System** is a console-based Java application built using Maven
 **JPA**, **Hibernate 7.x**, and **PostgreSQL**. It allows colleges or institutions to keep track of internship lectures attended by students,
-storing information like student details, lecture topics, dates, and mentor data.
+storing information like student details, lecture topics, dates.
 
 ---
 
@@ -29,29 +29,52 @@ storing information like student details, lecture topics, dates, and mentor data
 
 ##  Project Structure
 
-   InternshipLectureSystem/
-   
-    ├── src/
+  InternshipLectureSystem/
 
-    │ ├── app/
+├── .gitignore
 
-    │ │ └── MainApp.java
+├── pom.xml
 
-    │ ├── dao/
+├── README.md
 
-    │ │ └── LectureService.java
+├── src/
 
-    │ └── entity/
+│   └── main/
 
-    │ ├── Student.java
+│       ├── java/
 
-    │ ├── Lecture.java
+│       │   └── com/
 
-    │ └── Mentor.java
+│       │       └── example/
 
-    ├── pom.xml
+│       │           └── internship/
 
-     └── persistence.xml
+│       │               ├── MainApp.java
+
+│       │               ├── dao/
+
+│       │               │   ├── LectureDAO.java
+
+│       │               │   ├── StudentDAO.java
+
+│       │               │   └── FeedbackDAO.java
+
+│       │               └── entity/
+
+│       │                   ├── Lecture.java
+
+│       │                   ├── Student.java
+
+│       │                   └── Feedback.java
+
+│       └── resources/
+
+│           └── META-INF/
+
+│               └── persistence.xml
+
+└── target/ (auto-generated)
+
 
 ---
 
