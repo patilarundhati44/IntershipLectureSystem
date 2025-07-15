@@ -10,53 +10,92 @@ import jakarta.persistence.EntityTransaction;
 
 public class StudentDAO 
 {
-	public void addStudent(Student student) {
+	public void addStudent(Student student)
+	
+	{
         EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
-        try {
+        
+        try
+        
+        {
             em.getTransaction().begin();
             em.persist(student);
             em.getTransaction().commit();
+            
             System.out.println("Student registered successfully.");
-        } finally {
+        } 
+        
+        finally 
+        
+        {
             em.close();
         }
     }
 
-    public Student findStudentById(int id) {
+    public Student findStudentById(int id) 
+    {
         EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
-        try {
+        try 
+        
+        {
             return em.find(Student.class, id);
-        } finally {
+        }
+        
+        finally 
+        
+        {
             em.close();
         }
     }
 
-	public List<Student> getAllStudents() {
+	public List<Student> getAllStudents() 
+	
+	{
 		EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
-	    return em.createQuery("SELECT s FROM Student s", Student.class).getResultList();
+	    return em.createQuery("select s from Student s", Student.class).getResultList();
 	}
-	// StudentDAO.java
-	public void deleteStudent(int studentId) {
+	
+	public void deleteStudent(int studentId)
+	
+	{
 	    EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
 	    EntityTransaction tx = em.getTransaction();
 
-	    try {
+	    try
+	    
+	    {
 	        tx.begin();
 	        Student student = em.find(Student.class, studentId);
-	        if (student != null) {
+	        if (student != null) 
+	        
+	        {
 	            em.remove(student);
 	            System.out.println("Student deleted successfully.");
-	        } else {
+	        }
+	        
+	        else
+	        
+	        {
 	            System.out.println("Student not found.");
 	        }
+	        
 	        tx.commit();
-	    } catch (Exception e) {
+	    }
+	    
+	    catch (Exception e) 
+	    
+	    {
 	        if (tx.isActive()) tx.rollback();
 	        e.printStackTrace();
-	    } finally {
+	    } 
+	    
+	    finally 
+	    
+	    {
 	        em.close();
 	    }
 	}
 
+	
 
 }
