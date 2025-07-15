@@ -10,8 +10,7 @@ storing information like student details, lecture topics, dates, and mentor data
 
 -  Add student details
 -  Add internship lectures
--  Assign mentors to lectures
--  Track attendance of students per session
+-  Add also Feedback
 -  View all lectures and participants
 -  Simple menu-driven interface via the Java console
 
@@ -74,25 +73,26 @@ storing information like student details, lecture topics, dates, and mentor data
 Create the necessary tables in PostgreSQL:
 
 ```sql
-CREATE TABLE student (
+CREATE TABLE feedback (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100),
-    email VARCHAR(100),
-    phone VARCHAR(15)
+    comments TEXT,
+    rating INTEGER CHECK (rating BETWEEN 1 AND 5),
+    student_id INT REFERENCES students(id) ON DELETE RESTRICT,
+    lecture_id INT REFERENCES lectures(id) ON DELETE RESTRICT
 );
 
-CREATE TABLE mentor (
+
+CREATE TABLE students (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100),
-    department VARCHAR(100)
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL
 );
 
-CREATE TABLE lecture (
+CREATE TABLE lectures (
     id SERIAL PRIMARY KEY,
-    topic VARCHAR(200),
-    date DATE,
-    student_id INT REFERENCES student(id),
-    mentor_id INT REFERENCES mentor(id)
+    topic VARCHAR(100) NOT NULL,
+    speaker VARCHAR(100) NOT NULL,
+    date DATE NOT NULL
 );
 
 ```
