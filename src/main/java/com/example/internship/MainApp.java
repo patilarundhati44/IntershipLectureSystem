@@ -31,8 +31,7 @@ public class MainApp
             System.out.println("1. Add Lecture");
             System.out.println("2. Register Student");
             System.out.println("3. Give Feedback");
-            System.out.println("4. Delete Student");
-            System.out.println("5. Exit");
+            System.out.println("4. Exit");
 
             System.out.print("Enter choice: ");
 
@@ -120,16 +119,9 @@ public class MainApp
                     feedbackDAO.addFeedback(f, sid, lid);
                     break;
                     
+      
+
                 case 4:
-                	
-                    System.out.print("Enter Student ID to delete: ");
-                    int deleteId = sc.nextInt();
-                    studentDAO.deleteStudent(deleteId);
-                    break;
-
-   
-
-                case 5:
                 	
                     System.out.println("Exiting...");
                     sc.close();
