@@ -98,6 +98,11 @@ CREATE TABLE lecture (
 ```
 ---
 
+## Output Image
+
+   ![in-1](images/in-1.png)
+
+   
 Contact
 
  Name: Arundhati Anand Patil
