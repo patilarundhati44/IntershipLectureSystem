@@ -10,7 +10,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "feedback")
-public class Feedback {
+
+public class Feedback 
+
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,45 +30,65 @@ public class Feedback {
     private String comments;
     private int rating;
 
-    // ✅ Required setters
-    public void setStudent(Student student) {
+    
+    public void setStudent(Student student)
+    
+    {
         this.student = student;
     }
 
-    public void setLecture(Lecture lecture) {
+    public void setLecture(Lecture lecture) 
+    
+    {
         this.lecture = lecture;
     }
 
-    // ✅ Optional: Getters if needed elsewhere
-    public Student getStudent() {
+   
+    public Student getStudent() 
+    
+    {
         return student;
     }
 
-    public Lecture getLecture() {
+    public Lecture getLecture() 
+    
+    {
         return lecture;
     }
 
-    public int getId() {
+    public int getId() 
+    
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    
+    {
         this.id = id;
     }
 
-    public String getComments() {
+    public String getComments()
+    
+    {
         return comments;
     }
 
-    public void setComments(String comments) {
+    public void setComments(String comments)
+    
+    {
         this.comments = comments;
     }
 
-    public int getRating() {
+    public int getRating() 
+    
+    {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(int rating) 
+    
+    {
         this.rating = rating;
     }
 
