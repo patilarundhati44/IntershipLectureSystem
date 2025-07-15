@@ -1,0 +1,12 @@
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\dao\FeedbackDAO.java
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\dao\LectureDAO.java
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\dao\StudentDAO.java
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\entity\Entity.java
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\entity\Feedback.java
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\entity\GeneratedValue.java
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\entity\Id.java
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\entity\Lecture.java
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\entity\ManyToOne.java
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\entity\Student.java
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\MainApp.java
+C:\Users\patil\eclipse-workspace\InternshipLectureSystem\src\main\java\com\example\internship\util\JPAUtil.java
